@@ -2,7 +2,7 @@
 .env
 .env.local
 .env.*.local
-
+/Users/priyagoel/Desktop/TechChefz Project-1/backend/.env
 # Node modules
 node_modules/
 
