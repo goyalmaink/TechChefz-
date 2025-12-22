@@ -1,4 +1,4 @@
-# TechChefz Project-1 🍽️
+# TechChefz Project-1
 
 A small Express + MongoDB backend for TechChefz exercises.
 
@@ -41,5 +41,4 @@ A small Express + MongoDB backend for TechChefz exercises.
 - Ensure `.env` is listed in `.gitignore` and never committed.
 - If you accidentally committed secrets, rotate them immediately.
 
-## License
-MIT
+
