@@ -3,7 +3,6 @@ import { User } from '../model/User.js'
 const posting = async (req, res) => {
     try {
         const userdetails = req.body;
-       
         const user = new User(userdetails);
         await user.save();
         console.log("Post created successfully");
