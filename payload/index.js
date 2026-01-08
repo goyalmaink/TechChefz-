@@ -20,7 +20,7 @@ const payload = excelData
 
 // fs.writeFileSync("payload.json", JSON.stringify(payload, null, 2), "utf-8");
 
-console.log("Total Records:", payload.length);
+// console.log("Total Records:", payload.length);
 // console.log(payload);
 // console.log(JSON.stringify(payload, null, 2));
 // console.log(JSON.stringify(payload));
@@ -29,14 +29,29 @@ console.log("Total Records:", payload.length);
 //   console.log(`"${item.code}" "${item.phone}"`);
 // });
 
-const result = payload.map(item => ({
-    code: `${item.code}`,
-    fname: item.fname ,
-    scname: item.scname ,
-    email: item.email ,
-    phone: `${item.phone}`
-}));
+const  quotesdata  = payload.map(data=>({
+    code:`${data.code}`,
+    phone:`${data.phone}`
 
-console.log(JSON.stringify(result, null, 2));
+}))
 
-fs,writeFileSync("payload2.json",JSON.stringify(result, null, 2),"utf-8");
+
+// console.log("Converting string data to quotes data", quotesdata)
+// console.log("Using json stringigy method")
+// console.log(JSON.stringify(quotesdata, null, 2));
+
+
+const finaldata=  payload.map(data =>({
+    code:`${data.code}`,
+    fname:data.fname,
+    scname:data.scname,
+    email:data.email,
+    phone:`${data.phone}` 
+}))
+
+console.log("Total Records:", finaldata.length);
+console.log("Final complete data with quotes ")
+console.log(JSON.stringify(finaldata, null, 2));
+
+// Write final data to a JSON file
+fs.writeFileSync("finalpayload.json",JSON.stringify(finaldata, null, 2), "utf-8");
