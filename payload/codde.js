@@ -4,11 +4,11 @@ const payload1 = JSON.parse(fs.readFileSync("oldpayload.json", "utf-8"));
 const payload2 = JSON.parse(fs.readFileSync("newpayload.json", "utf-8"));
 
 const phoneSet = new Set(
-    payload1.map(item => item.phone.toString())
+    payload1.map(item => item.mobile.toString())
 );
 
 const deltaPayload = payload2.filter(item => {
-    const phone = item.phone.toString();
+    const phone = item.mobile.toString();
     return !phoneSet.has(phone);
 });
 
@@ -17,4 +17,5 @@ fs.writeFileSync(
     JSON.stringify(deltaPayload, null, 2),
     "utf-8"
 );
+console.log("Total new records found:", deltaPayload.length);
 
