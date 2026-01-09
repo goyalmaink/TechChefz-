@@ -1,6 +1,8 @@
 import xlsx from "xlsx";
 import fs, { writeFileSync } from 'fs'
-const data = xlsx.readFile("platform.xlsx");
+
+const data = xlsx.readFile("PlatformOnboarding.xlsx");
+
 const sheetName = data.SheetNames[0];
 const sheet = data.Sheets[sheetName];
 
@@ -17,6 +19,7 @@ const payload = excelData
         phone: row["Mobile Phone"],
         email: row["Primary Email"]
     }));
+
 
 // fs.writeFileSync("payload.json", JSON.stringify(payload, null, 2), "utf-8");
 
@@ -41,17 +44,17 @@ const  quotesdata  = payload.map(data=>({
 // console.log(JSON.stringify(quotesdata, null, 2));
 
 
-const finaldata=  payload.map(data =>({
-    code:`${data.code}`,
-    fname:data.fname,
-    scname:data.scname,
-    email:data.email,
-    phone:`${data.phone}` 
-}))
+// const finaldata=  payload.map(data =>({
+//     code:`${data.code}`,
+//     fname:data.fname,
+//     scname:data.scname,
+//     email:data.email,
+//     phone:`${data.phone}` 
+// }))
 
-console.log("Total Records:", finaldata.length);
-console.log("Final complete data with quotes ")
-console.log(JSON.stringify(finaldata, null, 2));
+// console.log("Total Records:", finaldata.length);
+// console.log("Final complete data with quotes ")
+// console.log(JSON.stringify(finaldata, null, 2));
 
-// Write final data to a JSON file
-fs.writeFileSync("finalpayload.json",JSON.stringify(finaldata, null, 2), "utf-8");
+// // Write final data to a JSON file
+// fs.writeFileSync("newpayload.json",JSON.stringify(finaldata, null, 2), "utf-8");

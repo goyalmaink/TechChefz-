@@ -1,3 +1,6 @@
 node_modules
 /node_modules
 /platform.xlsx
+/PlatformOnbaording.xlsx
+/.vscode
+/.DS_Store  
